@@ -27,4 +27,8 @@ class NoteController extends Controller
         ]);
         return redirect('/notes');
     }
+
+    public function show($id){
+        return view("show", ["notes" =>Note::findOrFail($id)]);
+    }
 }
