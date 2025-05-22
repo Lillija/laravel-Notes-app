@@ -8,12 +8,11 @@ Route::get('/', function () {
 });
 
 Route::get('/notes', function () {
-    return 'Hello World';});
+    return 'Hello World';
+});
 
 Route::get('/notes', [NoteController::class, 'index']);
 Route::post('/notes', [NoteController::class, 'store']);
 Route::get('/notes/create', [NoteController::class, 'create']);
-
 Route::get('/show/{id}', [NoteController::class, 'show']);
-
-
+Route::delete('/destroy/{id}', [NoteController::class, 'destroy']);

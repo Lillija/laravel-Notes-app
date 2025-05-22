@@ -1,5 +1,6 @@
 <ul>
     <li>{{ $notes->title }}</li>
     <li>{{ $notes->content }}</li>
-    <a href="/notes">return</a>
+    <a href="/notes">return</a> <br>
+
 </ul>

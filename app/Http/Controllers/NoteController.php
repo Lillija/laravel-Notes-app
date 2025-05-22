@@ -23,12 +23,20 @@ class NoteController extends Controller
     {
         $notes = Note::create([
             'title' => $request['title'],
-            'content' => $request['title'],
+            'content' => $request['content'],
         ]);
         return redirect('/notes');
     }
 
-    public function show($id){
-        return view("show", ["notes" =>Note::findOrFail($id)]);
+    public function show($id)
+    {
+        return view("show", ["notes" => Note::findOrFail($id)]);
+    }
+
+    public function destroy($id)
+    {
+        $notes = Note::find($id);
+        $notes->delete();
+        return redirect("/notes");
     }
 }

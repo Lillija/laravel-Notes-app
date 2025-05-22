@@ -7,8 +7,17 @@
         <li>{{ $note->title }}</li>
         <li>{{ $note->content }}</li>
     </ul>
-    <a href="/show/{{$note->id}}">view</a>
-    @endforeach
+    <button><a href="/show/{{$note->id}}">view</a></button>
+
+    <form action="/destroy/{{ $note->id }}" method="POST">
+        @csrf
+        @method("DELETE")
+        <button type="submit">Delete</button>
+    </form>
+
+    @endforeach <br>
+
     <button><a href="notes/create"> create new</button>
+
 
 </div>
