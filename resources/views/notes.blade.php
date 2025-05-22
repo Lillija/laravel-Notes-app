@@ -8,6 +8,7 @@
         <li>{{ $note->content }}</li>
     </ul>
     <button><a href="/show/{{$note->id}}">view</a></button>
+    <button><a href="/edit/{{$note->id}}">Edit note</a></button>
 
     <form action="/destroy/{{ $note->id }}" method="POST">
         @csrf
